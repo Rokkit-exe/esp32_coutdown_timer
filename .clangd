@@ -1,0 +1,21 @@
+CompileFlags:
+  Remove:
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fstrict-volatile-bitfields
+    - -fno-tree-switch-conversion
+  Add:
+    - --target=xtensa-esp32-elf
+    - --sysroot=/home/frank/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/xtensa-esp-elf
+    - -I/home/frank/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/xtensa-esp-elf/include
+    - -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/include
+    - -I/opt/esp-idf/components/freertos/esp_additions/include
+    - -I/opt/esp-idf/components/esp_common/include
+  CompilationDatabase: build/
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+
+
+

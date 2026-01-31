@@ -1,0 +1,54 @@
+# ===============================
+# ESP-IDF build artifacts
+# ===============================
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults
+sdkconfig.ci
+
+# ===============================
+# ESP-IDF managed components
+# ===============================
+managed_components/
+
+# ===============================
+# ESP-IDF tooling
+# ===============================
+.cmake/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+
+# ===============================
+# Python / virtualenv
+# ===============================
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# ===============================
+# VS Code (ESP-IDF extension)
+# ===============================
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# ===============================
+# OS / Editor junk
+# ===============================
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# ===============================
+# Logs & dumps
+# ===============================
+*.log
+*.dump
+

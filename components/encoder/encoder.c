@@ -3,6 +3,7 @@
 #include "encoder.h"
 #include "driver/gpio.h"
 #include <stdint.h>
+#include <stdbool.h>
 
 #define LONG_PRESS_DURATION_MS 1000
 

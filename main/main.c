@@ -6,13 +6,17 @@
 #include "driver/i2c_master.h"
 
 #include "encoder.h"
-#include "lcd_i2c.h"
+#include "i2c_lcd.h"
 #include "timer.h"
 #include "esp_timer.h"
 
 #define ENCODER_CLK 4
 #define ENCODER_DT  5
 #define ENCODER_SW  6
+#define LCD_ADDR    0x27
+#define I2C_MASTER_SDA_IO   8
+#define I2C_MASTER_SCL_IO   9
+#define I2C_MASTER_FREQ_HZ  100000
 
 #define DEFAULT_TIME_VALUE 15
 
@@ -88,8 +92,15 @@ char* format_value(enum Mode mode, int64_t duration_us)
 }
 
 void app_main(void)
-{      
-    lcd_i2c_init();
+{     
+    i2c_lcd_config_t cfg = {
+        .lcd_addr = LCD_ADDR,
+        .master_sda_io = I2C_MASTER_SDA_IO,
+        .master_scl_io = I2C_MASTER_SCL_IO,
+        .master_freq_hz = I2C_MASTER_FREQ_HZ,
+    };
+
+    i2c_lcd_init(&cfg);
 
     encoder_config_t encoder_config = {
         .clk_pin = ENCODER_CLK,
